@@ -19,6 +19,6 @@ Me. I am writing it so its different. I also am not writing it for a commercial 
 
 
 ### How to Install and Run 
-
+install the downloadable file from the repository and run it as it connects
 ### Credits
 I wrote this with the help of online assistants (youtube and possibly other sites)
