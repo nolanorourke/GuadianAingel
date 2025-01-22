@@ -21,4 +21,4 @@ Me. I am writing it so its different. I also am not writing it for a commercial 
 ### How to Install and Run 
 
 ### Credits
-I wrote this with the help of online assistants (youtube and)
+I wrote this with the help of online assistants (youtube and possibly other sites)
