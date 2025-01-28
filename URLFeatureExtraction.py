@@ -34,5 +34,21 @@ def hasAtSign(url):
 def tooLong(url):
     return len(url) > 58
 
+#counts how many / are in the URL to detemrine how far this goes in the site that it is leading to
+#good to have a count
+def getDepth(url):
+    return str(url).count('/')
+
+def isRedirection(url):
+    return str(url).rfind('//') - 6
+
+def isHTTP(url):
+    return str(url).count("HTTP", 0, 4)
+
+def isHTTPS(url):
+    return str(url).count("HTTPS", 0, 5)
+
+
+
 if __name__ == '__main__':
     getDomain("https://www.instagram.com")
