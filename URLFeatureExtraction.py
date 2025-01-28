@@ -37,18 +37,33 @@ def tooLong(url):
 #counts how many / are in the URL to detemrine how far this goes in the site that it is leading to
 #good to have a count
 def getDepth(url):
-    return str(url).count('/')
+    return str(url).count('/')-2
 
 def isRedirection(url):
     return str(url).rfind('//') - 6
 
 def isHTTP(url):
-    return str(url).count("HTTP", 0, 4)
+    return str(url).count("http", 0, 4)
 
 def isHTTPS(url):
-    return str(url).count("HTTPS", 0, 5)
+    return str(url).count("https", 0, 5)
 
+def testAll(url):
+    if(isHTTP(url)):
+        print("URL uses HTTP")
+    if(isHTTPS(url)):
+        print("URL uses HTTPS")
+    getDomain(url)
+    if(checkForIP(url)):
+        print("URL contains an IP address")
+    if(hasAtSign(url)):
+        print("URL has an @ symbol inside of it")
+    if(tooLong(url)):
+        print("URL suspiciously long")
+    print(f"Depth of URL is {getDepth(url)}")
 
 
 if __name__ == '__main__':
     getDomain("https://www.instagram.com")
+    testAll("https://github.com/shreyagopal/Phishing-Website-Detection-by-Machine-Learning-Techniques/blob/master/URLFeatureExtraction.py")
+    
