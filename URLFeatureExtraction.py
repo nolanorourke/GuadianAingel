@@ -67,6 +67,10 @@ URL_shorteners = r"bit\.ly|goo\.gl|shorte\.st|go2l\.ink|x\.co|ow\.ly|t\.co|tinyu
                     r"prettylinkpro\.com|scrnch\.me|filoops\.info|vzturl\.com|qr\.net|1url\.com|tweez\.me|v\.gd|" \
                     r"tr\.im|link\.zip\.net"
 #These are stored as raw string objects, so be reviewed in the next function
+def checkForShortener(url):
+    if(re.search(URL_shorteners, url) == None):
+        return False
+    return True
 
 def testAll(url):
     if(isHTTP(url)):
@@ -81,9 +85,12 @@ def testAll(url):
     if(tooLong(url)):
         print("URL suspiciously long")
     print(f"Depth of URL is {getDepth(url)}")
+    if(checkForShortener(url)):
+        print("URL has shortener, probs not a great thing")
 
 
 if __name__ == '__main__':
     getDomain("http://www.instagram.com")
     testAll("http://github.com/shreyagopal/Phishing-Website-Detection-by-Machine-Learning-Techniques/blob/master/URLFeatureExtraction.py")
-    
+    testAll("https://tinyurl.com/live-with-me")
+    testAll("https://doiop.com/live-with-me")
