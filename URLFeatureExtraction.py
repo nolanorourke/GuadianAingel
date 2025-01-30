@@ -43,10 +43,14 @@ def isRedirection(url):
     return str(url).rfind('//') - 6
 
 def isHTTP(url):
-    return str(url).count("http", 0, 4)
+    if(isHTTPS(url)):
+        return False
+    else:
+        return str(url).count("http", 0, 4) 
 
 def isHTTPS(url):
     return str(url).count("https", 0, 5)
+
 
 def testAll(url):
     if(isHTTP(url)):
@@ -64,6 +68,6 @@ def testAll(url):
 
 
 if __name__ == '__main__':
-    getDomain("https://www.instagram.com")
-    testAll("https://github.com/shreyagopal/Phishing-Website-Detection-by-Machine-Learning-Techniques/blob/master/URLFeatureExtraction.py")
+    getDomain("http://www.instagram.com")
+    testAll("http://github.com/shreyagopal/Phishing-Website-Detection-by-Machine-Learning-Techniques/blob/master/URLFeatureExtraction.py")
     
