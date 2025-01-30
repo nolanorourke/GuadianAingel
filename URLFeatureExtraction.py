@@ -52,6 +52,22 @@ def isHTTPS(url):
     return str(url).count("https", 0, 5)
 
 
+
+#URL shortening is a tactic used to shorten URLs so that requrests
+# are not denied and oeprate correctly no matter the legnth,
+# these are used by malicious actors to redirect without 
+# explicit strategy
+#here are different services that shorten URLs and might be malicious
+URL_shorteners = r"bit\.ly|goo\.gl|shorte\.st|go2l\.ink|x\.co|ow\.ly|t\.co|tinyurl|tr\.im|is\.gd|cli\.gs|" \
+                    r"yfrog\.com|migre\.me|ff\.im|tiny\.cc|url4\.eu|twit\.ac|su\.pr|twurl\.nl|snipurl\.com|" \
+                    r"short\.to|BudURL\.com|ping\.fm|post\.ly|Just\.as|bkite\.com|snipr\.com|fic\.kr|loopt\.us|" \
+                    r"doiop\.com|short\.ie|kl\.am|wp\.me|rubyurl\.com|om\.ly|to\.ly|bit\.do|t\.co|lnkd\.in|db\.tt|" \
+                    r"qr\.ae|adf\.ly|goo\.gl|bitly\.com|cur\.lv|tinyurl\.com|ow\.ly|bit\.ly|ity\.im|q\.gs|is\.gd|" \
+                    r"po\.st|bc\.vc|twitthis\.com|u\.to|j\.mp|buzurl\.com|cutt\.us|u\.bb|yourls\.org|x\.co|" \
+                    r"prettylinkpro\.com|scrnch\.me|filoops\.info|vzturl\.com|qr\.net|1url\.com|tweez\.me|v\.gd|" \
+                    r"tr\.im|link\.zip\.net"
+#These are stored as raw string objects, so be reviewed in the next function
+
 def testAll(url):
     if(isHTTP(url)):
         print("URL uses HTTP")
