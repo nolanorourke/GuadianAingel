@@ -72,6 +72,10 @@ def checkForShortener(url):
         return False
     return True
 
+def checkForDoubleHyphen(url):
+    return '--' in urlparse(url).netloc
+
+
 def testAll(url):
     if(isHTTP(url)):
         print("URL uses HTTP")
@@ -87,10 +91,13 @@ def testAll(url):
     print(f"Depth of URL is {getDepth(url)}")
     if(checkForShortener(url)):
         print("URL has shortener, probs not a great thing")
+    if(checkForDoubleHyphen(url)):
+        print("URL has double hyphen (2 dashes), suspicious")
+
 
 
 if __name__ == '__main__':
     getDomain("http://www.instagram.com")
-    testAll("http://github.com/shreyagopal/Phishing-Website-Detection-by-Machine-Learning-Techniques/blob/master/URLFeatureExtraction.py")
+    testAll("http://git--hub.com/shreyagopal/Phishing-Website-Detection-by-Machine-Learning-Techniques/blob/master/URLFeatureExtraction.py")
     testAll("https://tinyurl.com/live-with-me")
-    testAll("https://doiop.com/live-with-me")
+    testAll("http://doiop.com/live-with-me")
