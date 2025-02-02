@@ -1,7 +1,12 @@
 from urllib.parse import urlparse, urlencode
 import ipaddress
-import re
 
+import re #regular expressions
+from bs4 import BeautifulSoup #webscraping 
+#import whois
+import urllib# tools for working with URLs an making network requests
+import urllib.request # opening and reading URLs
+from datetime import datetime # gets curretn date and time in different formats
 
 #The first thing i want to do is get the domain of the URL, 
 # this is important when trying to determine whether or 
@@ -75,6 +80,16 @@ def checkForShortener(url):
 def checkForDoubleHyphen(url):
     return '--' in urlparse(url).netloc
 
+def web_traffic(url):
+    try:
+        url = urllib.parse.quote(url)
+        rank = BeautifulSoup(urllib.request.urlopen("http://data.alexa.com/data?cli=10&dat=s&url="+url).read(), "xml").find("REACH")["RANK"]
+        rank = int(rank)
+    except TypeError:
+        return 1
+    if rank < 100000:
+        return 1
+    return 0
 
 def testAll(url):
     if(isHTTP(url)):
@@ -93,6 +108,7 @@ def testAll(url):
         print("URL has shortener, probs not a great thing")
     if(checkForDoubleHyphen(url)):
         print("URL has double hyphen (2 dashes), suspicious")
+
 
 
 
