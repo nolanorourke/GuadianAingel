@@ -109,6 +109,8 @@ def testAll(url):
     if(checkForDoubleHyphen(url)):
         print("URL has double hyphen (2 dashes), suspicious")
 
+        #this is a checkingpoint for progress
+
 
 
 
