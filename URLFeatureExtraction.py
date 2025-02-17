@@ -93,6 +93,26 @@ def web_traffic(url):
 
 def domainAge(domainName):
     creation_date = domainName.creation_date
+    expiration_date = domainName.expiration_date
+    if (isinstance(creation_date, str) or isinstance(expiration_date, str)):
+        try:
+            creation_date=datetime.strptime(creation_date, '%Y-%m-%d')
+            expiration_date=datetime.strptime(expiration_date, '%Y-%m-%d')
+        except:
+            return 1
+        
+    if((creation_date is None) or (expiration_date is None)):
+        return 1
+    
+    elif((type(creation_date) is list) or (type(expiration_date) is list)):
+        return 1
+    
+    else:
+        age = abs((expiration_date - creation_date).days)
+        if((age/30) < 6):
+            return 1
+        else:
+            return 0
 
 
 
