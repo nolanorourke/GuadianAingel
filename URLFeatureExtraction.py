@@ -91,6 +91,11 @@ def web_traffic(url):
         return 1
     return 0
 
+def domainAge(domainName):
+    creation_date = domainName.creation_date
+
+
+
 def testAll(url):
     if(isHTTP(url)):
         print("URL uses HTTP")
@@ -110,8 +115,6 @@ def testAll(url):
         print("URL has double hyphen (2 dashes), suspicious")
 
         #this is a checkingpoint for progress
-
-
 
 
 if __name__ == '__main__':
