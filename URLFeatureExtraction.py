@@ -131,8 +131,7 @@ def testAll(url):
         print("URL has shortener, probs not a great thing")
     if(checkForDoubleHyphen(url)):
         print("URL has double hyphen (2 dashes), suspicious")
-
-    if(getDomain(url)):
+    if(domainAge(getDomain(url))):
         print("Domain is suspiciously old")
 
         #this is a checkingpoint for progress
