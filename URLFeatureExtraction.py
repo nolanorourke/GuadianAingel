@@ -92,12 +92,12 @@ def web_traffic(url):
     return 0
 
 def domainAge(domainName):
-    creation_date = domainName.creation_date
-    expiration_date = domainName.expiration_date
-    if (isinstance(creation_date, str) or isinstance(expiration_date, str)):
+    creationDate = domainName.creation_date
+    expirationDate = domainName.expiration_date
+    if (isinstance(creationDate, str) or isinstance(expirationDate, str)):
         try:
-            creation_date=datetime.strptime(creation_date, '%Y-%m-%d')
-            expiration_date=datetime.strptime(expiration_date, '%Y-%m-%d')
+            creation_date=datetime.strptime(creationDate, '%Y-%m-%d')
+            expiration_date=datetime.strptime(expirationDate, '%Y-%m-%d')
         except:
             return 1
         
@@ -113,7 +113,8 @@ def domainAge(domainName):
             return 1
         else:
             return 0
-
+def domainEnd(domainName):
+    expirationDate = domainName.experation_date
 def testAll(url):
     if(isHTTP(url)):
         print("URL uses HTTP")
