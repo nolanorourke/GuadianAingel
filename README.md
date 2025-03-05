@@ -4,7 +4,7 @@ A software that will guard an inbox to detect spam emails
 ## Table of Contents 
 
 ## Motiviation
-My Grandma was the victim of multiple different malware attacks, one being the most evil rancid browser hijacker that took a lot of fighting to get rid of. Anyway i can't always be there, so i figured i should create something that can watch over her while i wasnt there
+My Grandma was the victim of multiple different malware attacks, one being the most evil rancid browser hijacker that took a lot of fighting to get rid of. Anyway i can't always be there, so i figured i should create something that can watch over her while i wasnt available
 
 ## Purpose
 The purpose of this project is to protect 
@@ -21,4 +21,4 @@ Me. I am writing it so its different. I also am not writing it for a commercial 
 ### How to Install and Run 
 install the downloadable file from the repository and run it as it connects
 ### Credits
-I wrote this with the help of online assistants (youtube and possibly other sites)
+I wrote this with the help of online assistants (youtube, other repositories, and other sites)
