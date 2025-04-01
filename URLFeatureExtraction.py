@@ -136,8 +136,8 @@ def testAll(url):
         print("Domain is suspiciously old")
 
         #this is a checkingpoint for progress
-
-
+        #adding this as a test
+        
 if __name__ == '__main__':
     getDomain("http://www.instagram.com")
     testAll("http://git--hub.com/shreyagopal/Phishing-Website-Detection-by-Machine-Learning-Techniques/blob/master/URLFeatureExtraction.py")
